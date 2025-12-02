@@ -134,6 +134,20 @@ let penguin = new Penguin()
 // console.log(penguin.fly());
 
 
+// Static Method
+
+class Calculator{
+    static add(a,b){ //static is the method which can only be called by class itself 
+        return a+b
+    }
+}
+
+let miniCalc = new Calculator()
+// console.log(miniCalc.add(2,3));//shows error not a function
+console.log(Calculator.add(2,3)); // this is the how it is accessed
+
+
+
 
 
 
