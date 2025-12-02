@@ -144,7 +144,40 @@ class Calculator{
 
 let miniCalc = new Calculator()
 // console.log(miniCalc.add(2,3));//shows error not a function
-console.log(Calculator.add(2,3)); // this is the how it is accessed
+// console.log(Calculator.add(2,3)); // this is the how it is accessed
+
+
+// Getters and Setters
+
+class Employee{
+
+    #salary;
+    constructor(name,salary){
+        if(salary<0){
+            throw new Error("Salary cannot be in negative");
+        }
+        this.name= name
+        this.#salary= salary //_ means what you want to do when you get the salary and what you want to do when you set the salary
+    }
+
+    get salary(){
+        return `You are not Allowed to see Salary`;  
+    }
+
+    set salary(value){
+        if (value<0) {
+            console.error("invalid Salary");
+            
+        }
+        else{
+            this._salary= value;
+        }
+    }
+}
+
+let emp = new Employee("Alice", -50000)
+console.log(emp.salary);
+emp.salary=60000;
 
 
 
